@@ -15,7 +15,7 @@ object Test {
 //		println(encode(10))
 //		println(encode(15))
 //		println(encode(63))
-		println(encode(64))
+		println(encode(132))
 		println(Long.MaxValue + ":" + encode(Long.MaxValue))
 		println(Int.MaxValue + ":" + encode(Int.MaxValue))
 		println("encode end")
@@ -25,7 +25,7 @@ object Test {
 //		println(decode("a"))
 //		println(decode("f"))
 //		println(decode("11"))
-		println(decode("12"))
+		println(decode("28"))
 		println("aZl8N0y58I7 :" + decode("aZl8N0y58I7"))
 		println("2lkCB1 :" + decode("2lkCB1"))
 	}
