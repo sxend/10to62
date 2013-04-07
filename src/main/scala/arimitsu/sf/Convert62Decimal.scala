@@ -24,8 +24,7 @@ object Convert62Decimal {
 		if (s.length <= index) {
 			return num
 		}
-		val thisNum:Long = chars.indexOf(s.reverse.charAt(index)) * Math.pow(62,index).toLong
-		decode(s, index + 1, num + thisNum)
+		decode(s, index + 1, num + chars.indexOf(s.reverse.charAt(index)) * Math.pow(62,index).toLong)
 	}
 
 }
