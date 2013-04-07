@@ -1,7 +1,6 @@
 package arimitsu.sf
 
 import annotation.tailrec
-import runtime.RichLong
 
 /**
  * User: sxend
@@ -10,13 +9,14 @@ import runtime.RichLong
  */
 object Convert62Decimal {
 	private val chars: String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	private val radix:Long = 62
+	private val radix: Long = 62
+
 	@tailrec
 	def encode(num: Long, s: String = ""): String = {
 		if (num == 0) {
 			return if (s.length == 0) "0" else s
 		}
-		encode(Math.floor(num / radix) toLong, chars.charAt((num % radix).toInt) + s)
+		encode(Math.floor(num / radix) toLong, chars.charAt((num % radix) toInt) + s)
 	}
 
 	@tailrec
@@ -24,7 +24,7 @@ object Convert62Decimal {
 		if (s.length <= index) {
 			return num
 		}
-		decode(s, index + 1, num + chars.indexOf(s.reverse.charAt(index)) * Math.pow(radix,index).toLong)
+		decode(s, index + 1, num + chars.indexOf(s.reverse.charAt(index)) * Math.pow(radix, index) toLong)
 	}
 
 }
