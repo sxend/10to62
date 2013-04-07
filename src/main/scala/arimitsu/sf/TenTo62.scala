@@ -8,15 +8,11 @@ package arimitsu.sf
 object TenTo62 {
 	private val chars: String = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-	def convert(o: Long, s: String): String = {
-		if (o <= 0) {
-			return s
+	private def convert(num: Long, s: String = ""): String = {
+		if (num == 0) {
+			return if (s.length == 0) "0" else s
 		}
-		convert(Math.floor(o / 62) toLong, chars.charAt((o % 62) toInt) + s)
-	}
-
-	def convert(o: Long): String = {
-		convert(o, "")
+		convert(Math.floor(num / 62) toLong, chars.charAt((num % 62).toInt) + s)
 	}
 
 	def main(args: Array[String]): Unit = {
@@ -26,6 +22,6 @@ object TenTo62 {
 		println(convert(10))
 		println(convert(15))
 		println(convert(36))
-		println(convert(Long.MaxValue))
+		println(Long.MaxValue + ":" + convert(Long.MaxValue))
 	}
 }
