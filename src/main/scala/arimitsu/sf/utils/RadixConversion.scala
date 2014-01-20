@@ -1,4 +1,4 @@
-package arimitsu.sf
+package arimitsu.sf.utils
 
 import annotation.tailrec
 
@@ -51,8 +51,8 @@ object Radix {
 
 private[sf] class Radix(private val from: Long) {
   def -->(to: Long) = {
-    lazy val fromRadix: RadixConversion = RadixConversion(from)
+    lazy val fromRadix = RadixConversion(from)
     lazy val toRadix = RadixConversion(to)
-    (number:String) => toRadix.encode(fromRadix.decode(number))
+    (number: String) => toRadix.encode(fromRadix.decode(number))
   }
 }

@@ -1,5 +1,4 @@
-import arimitsu.sf.{Radix, RadixConversion}
-import java.util.UUID
+import arimitsu.sf.utils.Radix
 
 /**
  * User: sxend
