@@ -1,5 +1,5 @@
-import arimitsu.sf.Convert62Decimal.encode
-import arimitsu.sf.Convert62Decimal.decode
+import arimitsu.sf.{Radix, RadixConversion}
+import java.util.UUID
 
 /**
  * User: sxend
@@ -8,25 +8,7 @@ import arimitsu.sf.Convert62Decimal.decode
  */
 object Test {
 
-	def main(args: Array[String]): Unit = {
-//		println(encode(0))
-//		println(encode(1))
-//		println(encode(5))
-//		println(encode(10))
-//		println(encode(15))
-//		println(encode(63))
-		println(encode(132))
-		println(Long.MaxValue + ":" + encode(Long.MaxValue))
-		println(Int.MaxValue + ":" + encode(Int.MaxValue))
-		println("encode end")
-//		println(decode("0"))
-//		println(decode("1"))
-//		println(decode("5"))
-//		println(decode("a"))
-//		println(decode("f"))
-//		println(decode("11"))
-		println(decode("28"))
-		println("aZl8N0y58I7 :" + decode("aZl8N0y58I7"))
-		println("2lkCB1 :" + decode("2lkCB1"))
-	}
+  def main(args: Array[String]): Unit = {
+    println((Radix(10) --> 16)("10")) // a
+  }
 }
