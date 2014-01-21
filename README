@@ -1,1 +1,6 @@
-10進62進変換
+Radix Conversion
+================
+
+Base 1 ~ 62 Number to Base 1 ~ 62 Number.
+
+Example: (Radix(10) --> (62))("100") // 1C
